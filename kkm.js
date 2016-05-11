@@ -20,7 +20,7 @@ module.exports ={
 				res.json(data);
 				console.log(data)
 			}else{
-				data["tbl_kkm"] = 'No kkm Found..';
+				data["tbl_kkm"] = 'kkm Found..';
 				res.json(data);
 			}
 		});
