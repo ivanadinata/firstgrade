@@ -20,7 +20,7 @@ module.exports ={
 				res.json(data);
 				console.log(data)
 			}else{
-				data["tbl_type"] = 'No type Found..';
+				data["tbl_type"] = 'No type Founddasdsadsa..';
 				res.json(data);
 			}
 		});
