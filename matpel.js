@@ -13,14 +13,14 @@ module.exports ={
 			"dbnilai":""
 		};
 
-		connection.query("SELECT * from tbl_pivotguru",function(err, rows, fields){
+		connection.query("SELECT * from tbl_matpel",function(err, rows, fields){
 			if(rows.length != 0){
 				data["error"] = 0;
 				data["dbnilai"] = rows;
 				res.json(data);
 				console.log(data)
 			}else{
-				data["tbl_pivotguru"] = 'No ppivotguru Found..';
+				data["tbl_matpel"] = 'No matpel found';
 				res.json(data);
 			}
 		});
@@ -28,50 +28,48 @@ module.exports ={
 
 	post :function(req,res){
 		var id = req.body.id;
-		var id_user = req.body.id_user;
-		var id_kelas = req.body.id_kelas;
+		var nama_matpel = req.body.nama_matpel;
 		var data = {
 			"error":1,
-			"tbl_pivotguru":""
+			"tbl_matpel":""
 		};
-		if(!!id && !!id_user && !!id_kelas){
-			connection.query("INSERT INTO tbl_pivotguru VALUES(?,?,?)",[id,id_user,id_kelas],function(err, rows, fields){
+		if(!!id && !!nama_matpel){
+			connection.query("INSERT INTO tbl_matpel VALUES(?,?)",[id,nama_matpel],function(err, rows, fields){
 				if(!!err){
-					data["tbl_pivotguru"] = "Error Adding data";
+					data["tbl_matpel"] = "Error Adding data";
 					console.log(err)
 				}else{
 					data["error"] = 0;
-					data["tbl_pivotguru"] = "pivotguru Added Successfully";
+					data["tbl_matpel"] = "matpel Added Successfully";
 				}
 				res.json(data);
 			});
 		}else{
-			data["tbl_pivotguru"] = "Please provide all required data (i.e : id, id_user, id_kelas)";
+			data["tbl_matpel"] = "Please provide all required data (i.e : id,nama_matpel)";
 			res.json(data);
 		}
 	},
 
 	put : function(req,res){
 		var id = req.body.id;
-		var id_user = req.body.id_user;
-		var id_kelas = req.body.id_kelas;
+		var nama_matpel = req.body.nama_matpel;
 		var data = {
 			"error":1,
 			"dbnilai":""
 		};
-		if(!!id && !!id_user && !!id_kelas){
-			connection.query("UPDATE tbl_pivotguru SET id_kelas=?, id_user=? WHERE id=?",[id_kelas,id_user,id],function(err, rows, fields){
+		if(!!id && !!nama_matpel){
+			connection.query("UPDATE tbl_matpel SET nama_matpel=? WHERE id=?",[nama_matpel,id],function(err, rows, fields){
 				if(!!err){
 					data["dbnilai"] = "Error Updating data";
 					console.log(err)
 				}else{
 					data["error"] = 0;
-					data["dbnilai"] = "put pivotguru Successfully";
+					data["dbnilai"] = "put matpel Successfully";
 				}
 				res.json(data);
 			});
 		}else{
-			data["dbnilai"] = "Please provide all required data (i.e :id,id_kelas,id_user)";
+			data["dbnilai"] = "Please provide all required data (i.e :id,nama_matpel)";
 			res.json(data);
 		}
 	},
@@ -83,13 +81,13 @@ module.exports ={
 			"dbnilai":""
 		};
 		if(!!id){
-			connection.query("DELETE FROM tbl_pivotguru WHERE id=?",[id],function(err, rows, fields){
+			connection.query("DELETE FROM tbl_matpel WHERE id=?",[id],function(err, rows, fields){
 				if(!!err){
 					data["dbnilai"] = "Error deleting data";
 					console.log(err)
 				}else{
 					data["error"] = 0;
-					data["dbnilai"] = "Delete pivotguru Successfully";
+					data["dbnilai"] = "Delete matpel Successfully";
 				}
 				res.json(data)
 			});

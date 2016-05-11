@@ -15,8 +15,12 @@ var kelascontroller = require('./kelas');
 var statuscontroller = require('./status');
 var kkmcontroller = require('./kkm');
 var tlpcontroller = require('./tlp');
+<<<<<<< HEAD
 var pivotgurucontroller = require('./pivotguru');
 
+=======
+var matpelcontroller =require('./matpel');
+>>>>>>> f429cffa04395cedd56210215bf17a8429928187
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -59,12 +63,20 @@ app.use(bodyParser.json());
 	app.put('/tbl_tlp/:id',tlpcontroller.put)
 	app.delete('/tbl_tlp/:id',tlpcontroller.delete)
 
+<<<<<<< HEAD
 	//tbl_pivotguru
 	app.get('/tbl_pivotguru',pivotgurucontroller.get)
 	app.post('/tbl_pivotguru',pivotgurucontroller.post)
 	app.put('/tbl_pivotguru/:id',pivotgurucontroller.put)
 	app.delete('/tbl_pivotguru/:id',pivotgurucontroller.delete)
 
+=======
+	//tbl_matpel
+	app.get('/tbl_matpel',matpelcontroller.get)
+	app.post('/tbl_matpel',matpelcontroller.post)
+	app.put('/tbl_matpel/:id',matpelcontroller.put)
+	app.delete('/tbl_matpel/:id',matpelcontroller.delete)
+>>>>>>> f429cffa04395cedd56210215bf17a8429928187
 
 http.listen(8080,function(){
 	console.log("Connected & Listen to port 8080");
