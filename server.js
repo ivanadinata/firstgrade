@@ -15,6 +15,7 @@ var kelascontroller = require('./kelas');
 var statuscontroller = require('./status');
 var kkmcontroller = require('./kkm');
 var tlpcontroller = require('./tlp');
+var foldercontroller = require('./folder');
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -56,6 +57,12 @@ app.use(bodyParser.json());
 	app.post('/tbl_tlp',tlpcontroller.post)
 	app.put('/tbl_tlp/:id',tlpcontroller.put)
 	app.delete('/tbl_tlp/:id',tlpcontroller.delete)
+
+	//tbl_folder
+	app.get('/tbl_folder',foldercontroller.get)
+	app.post('/tbl_folder',foldercontroller.post)
+	app.put('/tbl_folder/:id',foldercontroller.put)
+	app.delete('/tbl_folder/:id',foldercontroller.delete)
 
 http.listen(8080,function(){
 	console.log("Connected & Listen to port 8080");
