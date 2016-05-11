@@ -13,14 +13,14 @@ module.exports ={
 			"dbnilai":""
 		};
 
-		connection.query("SELECT * from tbl_user",function(err, rows, fields){
+		connection.query("SELECT * from tbl_folder",function(err, rows, fields){
 			if(rows.length != 0){
 				data["error"] = 0;
 				data["dbnilai"] = rows;
 				res.json(data);
 				console.log(data)
 			}else{
-				data["tbl_user"] = 'No user Foundddd..';
+				data["tbl_folder"] = 'No folder Foundddd..';
 				res.json(data);
 			}
 		});
@@ -28,52 +28,54 @@ module.exports ={
 
 	post :function(req,res){
 		var id = req.body.id;
-		var nama = req.body.nama;
-		var password = req.body.password;
-		var id_type = req.body.id_type;
+		var nama_folder = req.body.nama_folder;
+		var id_kelas = req.body.id_kelas;
+		var id_matpel = req.body.id_matpel;
+		var id_kkm = req.body.id_kkm;
 		var data = {
 			"error":1,
-			"tbl_user":""
+			"tbl_folder":""
 		};
-		if(!!id && !!nama && !!password && !!id_type){
-			connection.query("INSERT INTO tbl_user VALUES(?,?,?,?)",[id,nama,password,id_type],function(err, rows, fields){
+		if(!!id && !!nama_folder && !! id_kelas && !!id_matpel && !! id_kkm){
+			connection.query("INSERT INTO tbl_folder VALUES(?,?,?,?,?)",[id,nama_folder,id_kelas,id_matpel,id_kkm],function(err, rows, fields){
 				if(!!err){
-					data["tbl_user"] = "Error Adding data";
+					data["tbl_folder"] = "Error Adding data";
 					console.log(err)
 				}else{
 					data["error"] = 0;
-					data["tbl_user"] = "user Added Successfully";
+					data["tbl_folder"] = "folder Added Successfully";
 				}
 				res.json(data);
 			});
 		}else{
-			data["tbl_user"] = "Please provide all required data (i.e : id, nama, password , id_type)";
+			data["tbl_folder"] = "Please provide all required data (i.e : id,nama_folder,id_kelas,id_matpel,id_kkm)";
 			res.json(data);
 		}
 	},
 
 	put : function(req,res){
 		var id = req.body.id;
-		var nama = req.body.nama;
-		var password = req.body.password;
-		var id_type = req.body.id_type;
+		var nama_folder = req.body.nama_folder;
+		var id_kelas = req.body.id_kelas;
+		var id_matpel = req.body.id_matpel;
+		var id_kkm = req.body.id_kkm;
 		var data = {
 			"error":1,
 			"dbnilai":""
 		};
-		if(!!id && !!nama && !!password && !!id_type){
-			connection.query("UPDATE tbl_user SET nama=?, password=? ,id_type=? WHERE id=?",[nama,password,id_type,id],function(err, rows, fields){
+		if(!!id && !!nama_folder && !!id_kelas && !!id_matpel && !! id_kkm){
+			connection.query("UPDATE tbl_folder SET nama_folder=?, id_kelas=? ,id_matpel=?, id_kkm=? WHERE id=?",[nama_folder,id_kelas,id_matpel,id_kkm,id],function(err, rows, fields){
 				if(!!err){
 					data["dbnilai"] = "Error Updating data";
 					console.log(err)
 				}else{
 					data["error"] = 0;
-					data["dbnilai"] = "put user Successfully";
+					data["dbnilai"] = "put folder Successfully";
 				}
 				res.json(data);
 			});
 		}else{
-			data["dbnilai"] = "Please provide all required data (i.e :id,nama,password,id_type)";
+			data["dbnilai"] = "Please provide all required data (i.e :id,nama_folder,id_kelas,id_matpel,id_kkm)";
 			res.json(data);
 		}
 	},
@@ -85,7 +87,7 @@ module.exports ={
 			"dbnilai":""
 		};
 		if(!!id){
-			connection.query("DELETE FROM tbl_user WHERE id=?",[id],function(err, rows, fields){
+			connection.query("DELETE FROM tbl_folder WHERE id=?",[id],function(err, rows, fields){
 				if(!!err){
 					data["dbnilai"] = "Error deleting data";
 					console.log(err)
