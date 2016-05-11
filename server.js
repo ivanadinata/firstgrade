@@ -15,6 +15,8 @@ var kelascontroller = require('./kelas');
 var statuscontroller = require('./status');
 var kkmcontroller = require('./kkm');
 var tlpcontroller = require('./tlp');
+var pivotgurucontroller = require('./pivotguru');
+
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -56,6 +58,13 @@ app.use(bodyParser.json());
 	app.post('/tbl_tlp',tlpcontroller.post)
 	app.put('/tbl_tlp/:id',tlpcontroller.put)
 	app.delete('/tbl_tlp/:id',tlpcontroller.delete)
+
+	//tbl_pivotguru
+	app.get('/tbl_pivotguru',pivotgurucontroller.get)
+	app.post('/tbl_pivotguru',pivotgurucontroller.post)
+	app.put('/tbl_pivotguru/:id',pivotgurucontroller.put)
+	app.delete('/tbl_pivotguru/:id',pivotgurucontroller.delete)
+
 
 http.listen(8080,function(){
 	console.log("Connected & Listen to port 8080");
