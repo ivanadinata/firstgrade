@@ -15,7 +15,11 @@ var kelascontroller = require('./kelas');
 var statuscontroller = require('./status');
 var kkmcontroller = require('./kkm');
 var tlpcontroller = require('./tlp');
+<<<<<<< HEAD
 var foldercontroller = require('./folder');
+=======
+var matpelcontroller =require('./matpel');
+>>>>>>> f429cffa04395cedd56210215bf17a8429928187
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -26,7 +30,7 @@ app.use(bodyParser.json());
 	app.get('/tbl_user',usercontroller.get)
 	app.post('/tbl_user',usercontroller.post)
 	app.put('/tbl_user/:id',usercontroller.put)
-	app.delete('/tbl_user/:id',usercontroller.delete)
+	app.delete('/tbl_user/:id', usercontroller.delete)
 
 	//tbl_type
 	app.get('/tbl_type',typecontroller.get)
@@ -58,11 +62,19 @@ app.use(bodyParser.json());
 	app.put('/tbl_tlp/:id',tlpcontroller.put)
 	app.delete('/tbl_tlp/:id',tlpcontroller.delete)
 
+<<<<<<< HEAD
 	//tbl_folder
 	app.get('/tbl_folder',foldercontroller.get)
 	app.post('/tbl_folder',foldercontroller.post)
 	app.put('/tbl_folder/:id',foldercontroller.put)
 	app.delete('/tbl_folder/:id',foldercontroller.delete)
+=======
+	//tbl_matpel
+	app.get('/tbl_matpel',matpelcontroller.get)
+	app.post('/tbl_matpel',matpelcontroller.post)
+	app.put('/tbl_matpel/:id',matpelcontroller.put)
+	app.delete('/tbl_matpel/:id',matpelcontroller.delete)
+>>>>>>> f429cffa04395cedd56210215bf17a8429928187
 
 http.listen(8080,function(){
 	console.log("Connected & Listen to port 8080");
