@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 	app.get('/tbl_user',usercontroller.get)
 	app.post('/tbl_user',usercontroller.post)
 	app.put('/tbl_user/:id',usercontroller.put)
-	app.delete('/tbl_user/:id', usercontroller.delete)
+	app.delete('/tbl_user/:id',usercontroller.delete)
 
 	//tbl_type
 	app.get('/tbl_type',typecontroller.get)
