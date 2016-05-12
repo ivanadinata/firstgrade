@@ -20,7 +20,7 @@ module.exports ={
 				res.json(data);
 				console.log(data)
 			}else{
-				data["tbl_user"] = 'No userrr Found..';
+				data["tbl_nilai"] = 'No nilai Found..';
 				res.json(data);
 			}
 		});
@@ -28,21 +28,21 @@ module.exports ={
 
 	post :function(req,res){
 		var id = req.body.id;
-		var nilai = req.body.nama;
-		var id_user = req.body.password;
-		var id_folder = req.body.id_type;
+		var nilai = req.body.nilai;
+		var id_user = req.body.id_user;
+		var id_folder = req.body.id_folder;
 		var data = {
 			"error":1,
 			"tbl_nilai":""
 		};
 		if(!!id && !!nilai && !!id_user && !!id_folder){
-			connection.query("INSERT INTO tbl_user VALUES(?,?,?,?)",[id,nilai,id_user,id_folder],function(err, rows, fields){
+			connection.query("INSERT INTO tbl_nilai VALUES(?,?,?,?)",[id,nilai,id_user,id_folder],function(err, rows, fields){
 				if(!!err){
 					data["tbl_nilai"] = "Error Adding data";
 					console.log(err)
 				}else{
 					data["error"] = 0;
-					data["tbl_nilai"] = "user Added Successfully";
+					data["tbl_nilai"] = "nilai Added Successfully";
 				}
 				res.json(data);
 			});
@@ -54,15 +54,15 @@ module.exports ={
 
 	put : function(req,res){
 		var id = req.body.id;
-		var nilai = req.body.nama;
-		var id_user = req.body.password;
-		var id_folder = req.body.id_type;
+		var nilai = req.body.nilai;
+		var id_user = req.body.id_user;
+		var id_folder = req.body.id_folder;
 		var data = {
 			"error":1,
 			"dbnilai":""
 		};
 		if(!!id && !!nilai && !!id_user && !!id_folder){
-			connection.query("UPDATE tbl_user SET nilai=?, id_user=? ,id_folder=? WHERE id=?",[nilai,id_user,id_folder,id],function(err, rows, fields){
+			connection.query("UPDATE tbl_nilai SET nilai=?, id_user=? ,id_folder=? WHERE id=?",[nilai,id_user,id_folder,id],function(err, rows, fields){
 				if(!!err){
 					data["dbnilai"] = "Error Updating data";
 					console.log(err)
@@ -91,7 +91,7 @@ module.exports ={
 					console.log(err)
 				}else{
 					data["error"] = 0;
-					data["dbnilai"] = "Delete user Successfully";
+					data["dbnilai"] = "Delete ni' Successfully";
 				}
 				res.json(data)
 			});
