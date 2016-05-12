@@ -26,6 +26,8 @@ var pivotgurucontroller = require('./pivotguru');
 var matpelcontroller =require('./matpel');
 >>>>>>> f429cffa04395cedd56210215bf17a8429928187
 
+var nilaicontroller = require('./nilai');
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -89,6 +91,12 @@ app.use(bodyParser.json());
 	app.put('/tbl_matpel/:id',matpelcontroller.put)
 	app.delete('/tbl_matpel/:id',matpelcontroller.delete)
 >>>>>>> f429cffa04395cedd56210215bf17a8429928187
+
+	//tbl_nilai
+	app.get('/tbl_nilai',nilaicontroller.get)
+	app.post('/tbl_nilai',nilaicontroller.post)
+	app.put('/tbl_nilai/:id',nilaicontroller.put)
+	app.delete('/tbl_nilai/:id',nilaicontroller.delete)
 
 http.listen(8080,function(){
 	console.log("Connected & Listen to port 8080");
