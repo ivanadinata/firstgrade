@@ -37,12 +37,13 @@ var matpelcontroller =require('./matpel');
 var nilaicontroller = require('./nilai');
 
 var typecontrollers = require('./controller/typecontroller')
-<<<<<<< HEAD
+//<<<<<<< HEAD
 var kelascontrollers = require('./controller/kelascontroller')
-=======
+//=======
 var kkmcontrollers  = require('./controller/kkmcontroller')
->>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
+//>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
 
+var usercontrollers  = require('./controller/usercontroller')
 	
 	//tbl_user
 	app.get('/tbl_user',usercontroller.get)
@@ -116,21 +117,28 @@ var kkmcontrollers  = require('./controller/kkmcontroller')
 	app.put('/url/tbl_type/:id',typecontrollers.put)
 	app.delete('/url/tbl_type/:id',typecontrollers.delete)
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	//kelas controller
 	app.get('/url/tbl_kelas/:id',kelascontrollers.getid)
 	app.get('/url/tbl_kelas',kelascontrollers.get)
 	app.post('/url/tbl_kelas',kelascontrollers.post)
 	app.put('/url/tbl_kelas/:id',kelascontrollers.put)
 	app.delete('/url/tbl_kelas/:id',kelascontrollers.delete)
-=======
+//=======
 	//kkm controller
 	app.get('/url/tbl_kkm/:id',kkmcontrollers.getid)
 	app.get('/url/tbl_kkm',kkmcontrollers.get)
 	app.post('/url/tbl_kkm',kkmcontrollers.post)
 	app.put('/url/tbl_kkm/:id',kkmcontrollers.put)
 	app.delete('/url/tbl_kkm/:id',kkmcontrollers.delete)
->>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
+//>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
+
+//user controller
+	app.get('/url/tbl_user/:id',usercontrollers.getid)
+	app.get('/url/tbl_user',usercontrollers.get)
+	app.post('/url/tbl_user',usercontrollers.post)
+	app.put('/url/tbl_user/:id',usercontrollers.put)
+	app.delete('/url/tbl_user/:id',usercontrollers.delete)
 
 http.listen(8080,function(){
 	console.log("Connected & Listen to port 8080");
