@@ -37,6 +37,7 @@ var matpelcontroller =require('./matpel');
 var nilaicontroller = require('./nilai');
 
 var typecontrollers = require('./controller/typecontroller')
+var kkmcontrollers  = require('./controller/kkmcontroller')
 
 	
 	//tbl_user
@@ -110,6 +111,13 @@ var typecontrollers = require('./controller/typecontroller')
 	app.post('/url/tbl_type',typecontrollers.post)
 	app.put('/url/tbl_type/:id',typecontrollers.put)
 	app.delete('/url/tbl_type/:id',typecontrollers.delete)
+
+	//kkm controller
+	app.get('/url/tbl_kkm/:id',kkmcontrollers.getid)
+	app.get('/url/tbl_kkm',kkmcontrollers.get)
+	app.post('/url/tbl_kkm',kkmcontrollers.post)
+	app.put('/url/tbl_kkm/:id',kkmcontrollers.put)
+	app.delete('/url/tbl_kkm/:id',kkmcontrollers.delete)
 
 http.listen(8080,function(){
 	console.log("Connected & Listen to port 8080");
