@@ -133,7 +133,7 @@ var usercontrollers  = require('./controller/usercontroller')
 	app.delete('/url/tbl_kkm/:id',kkmcontrollers.delete)
 //>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
 
-//user controller
+//user user
 	app.get('/url/tbl_user/:id',usercontrollers.getid)
 	app.get('/url/tbl_user',usercontrollers.get)
 	app.post('/url/tbl_user',usercontrollers.post)
