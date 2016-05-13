@@ -37,8 +37,15 @@ var matpelcontroller =require('./matpel');
 var nilaicontroller = require('./nilai');
 
 var typecontrollers = require('./controller/typecontroller')
+<<<<<<< HEAD
+var kelascontrollers = require('./controller/kelascontroller')
+=======
 var kkmcontrollers  = require('./controller/kkmcontroller')
+<<<<<<< HEAD
 var matpelcontrollers  = require('./controller/matpelcontroller')
+=======
+>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
+>>>>>>> 7abccfce156f87399c9ff6ac00257972299c9814
 
 	
 	//tbl_user
@@ -113,12 +120,21 @@ var matpelcontrollers  = require('./controller/matpelcontroller')
 	app.put('/url/tbl_type/:id',typecontrollers.put)
 	app.delete('/url/tbl_type/:id',typecontrollers.delete)
 
+<<<<<<< HEAD
+	//kelas controller
+	app.get('/url/tbl_kelas/:id',kelascontrollers.getid)
+	app.get('/url/tbl_kelas',kelascontrollers.get)
+	app.post('/url/tbl_kelas',kelascontrollers.post)
+	app.put('/url/tbl_kelas/:id',kelascontrollers.put)
+	app.delete('/url/tbl_kelas/:id',kelascontrollers.delete)
+=======
 	//kkm controller
 	app.get('/url/tbl_kkm/:id',kkmcontrollers.getid)
 	app.get('/url/tbl_kkm',kkmcontrollers.get)
 	app.post('/url/tbl_kkm',kkmcontrollers.post)
 	app.put('/url/tbl_kkm/:id',kkmcontrollers.put)
 	app.delete('/url/tbl_kkm/:id',kkmcontrollers.delete)
+>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
 
 	//matpel controller
 	app.get('/url/tbl_matpel/:id',matpelcontrollers.getid)
