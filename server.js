@@ -37,17 +37,17 @@ var matpelcontroller =require('./matpel');
 var nilaicontroller = require('./nilai');
 
 var typecontrollers = require('./controller/typecontroller')
-<<<<<<< HEAD
+//<<<<<<< HEAD
 var kelascontrollers = require('./controller/kelascontroller')
-=======
+//=======
 var kkmcontrollers  = require('./controller/kkmcontroller')
-<<<<<<< HEAD
+//<<<<<<< HEAD
 var matpelcontrollers  = require('./controller/matpelcontroller')
-=======
->>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
->>>>>>> 7abccfce156f87399c9ff6ac00257972299c9814
-
-	
+//=======
+//>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
+//>>>>>>> 7abccfce156f87399c9ff6ac00257972299c9814
+var foldercontrollers = require('./controller/foldercontroller')
+var usercontrollers = require('./controller/usercontroller')	
 	//tbl_user
 	app.get('/tbl_user',usercontroller.get)
 	app.post('/tbl_user',usercontroller.post)
@@ -120,21 +120,21 @@ var matpelcontrollers  = require('./controller/matpelcontroller')
 	app.put('/url/tbl_type/:id',typecontrollers.put)
 	app.delete('/url/tbl_type/:id',typecontrollers.delete)
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	//kelas controller
 	app.get('/url/tbl_kelas/:id',kelascontrollers.getid)
 	app.get('/url/tbl_kelas',kelascontrollers.get)
 	app.post('/url/tbl_kelas',kelascontrollers.post)
 	app.put('/url/tbl_kelas/:id',kelascontrollers.put)
 	app.delete('/url/tbl_kelas/:id',kelascontrollers.delete)
-=======
+//=======
 	//kkm controller
 	app.get('/url/tbl_kkm/:id',kkmcontrollers.getid)
 	app.get('/url/tbl_kkm',kkmcontrollers.get)
 	app.post('/url/tbl_kkm',kkmcontrollers.post)
 	app.put('/url/tbl_kkm/:id',kkmcontrollers.put)
 	app.delete('/url/tbl_kkm/:id',kkmcontrollers.delete)
->>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
+//>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
 
 	//matpel controller
 	app.get('/url/tbl_matpel/:id',matpelcontrollers.getid)
@@ -142,6 +142,20 @@ var matpelcontrollers  = require('./controller/matpelcontroller')
 	app.post('/url/tbl_matpel',matpelcontrollers.post)
 	app.put('/url/tbl_matpel/:id',matpelcontrollers.put)
 	app.delete('/url/tbl_matpel/:id',matpelcontrollers.delete)
+
+	//folder controller
+	app.get('/url/tbl_folder/:id',foldercontrollers.getid)
+	app.get('/url/tbl_folder',foldercontrollers.get)
+	app.post('/url/tbl_folder',foldercontrollers.post)
+	app.put('/url/tbl_folder/:id',foldercontrollers.put)
+	app.delete('/url/tbl_folder/:id',foldercontrollers.delete)
+
+	//user controler
+	app.get('/url/tbl_user/:id',usercontrollers.getid)
+	app.get('/url/tbl_user',usercontrollers.get)
+	app.post('/url/tbl_user',usercontrollers.post)
+	app.put('/url/tbl_user/:id',usercontrollers.put)
+	app.delete('/url/tbl_user/:id',usercontrollers.delete)
 
 http.listen(8080,function(){
 	console.log("Connected & Listen to port 8080");
