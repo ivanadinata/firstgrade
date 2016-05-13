@@ -8,6 +8,14 @@ var connection = mysql.createConnection({
 		password : '',
 		database : 'dbnilai',
 	});
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,POST,DELETE,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 var usercontroller = require('./user');
 var typecontroller = require('./type');
@@ -28,9 +36,7 @@ var matpelcontroller =require('./matpel');
 
 var nilaicontroller = require('./nilai');
 
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+var typecontrollers = require('./controller/typecontroller')
 
 	
 	//tbl_user
@@ -97,6 +103,13 @@ app.use(bodyParser.json());
 	app.post('/tbl_nilai',nilaicontroller.post)
 	app.put('/tbl_nilai/:id',nilaicontroller.put)
 	app.delete('/tbl_nilai/:id',nilaicontroller.delete)
+
+	//type controller
+	app.get('/url/tbl_type/:id',typecontrollers.getid)
+	app.get('/url/tbl_type',typecontrollers.get)
+	app.post('/url/tbl_type',typecontrollers.post)
+	app.put('/url/tbl_type/:id',typecontrollers.put)
+	app.delete('/url/tbl_type/:id',typecontrollers.delete)
 
 http.listen(8080,function(){
 	console.log("Connected & Listen to port 8080");
