@@ -41,10 +41,20 @@ var typecontrollers = require('./controller/typecontroller')
 var kelascontrollers = require('./controller/kelascontroller')
 //=======
 var kkmcontrollers  = require('./controller/kkmcontroller')
+<<<<<<< HEAD
 //>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
 
 var usercontrollers  = require('./controller/usercontroller')
 	
+=======
+//<<<<<<< HEAD
+var matpelcontrollers  = require('./controller/matpelcontroller')
+//=======
+//>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
+//>>>>>>> 7abccfce156f87399c9ff6ac00257972299c9814
+var foldercontrollers = require('./controller/foldercontroller')
+var usercontrollers = require('./controller/usercontroller')	
+>>>>>>> 392a8c36413ff5e50d22f09e889ecf4b7254a83b
 	//tbl_user
 	app.get('/tbl_user',usercontroller.get)
 	app.post('/tbl_user',usercontroller.post)
@@ -133,7 +143,25 @@ var usercontrollers  = require('./controller/usercontroller')
 	app.delete('/url/tbl_kkm/:id',kkmcontrollers.delete)
 //>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
 
+<<<<<<< HEAD
 //user user
+=======
+	//matpel controller
+	app.get('/url/tbl_matpel/:id',matpelcontrollers.getid)
+	app.get('/url/tbl_matpel',matpelcontrollers.get)
+	app.post('/url/tbl_matpel',matpelcontrollers.post)
+	app.put('/url/tbl_matpel/:id',matpelcontrollers.put)
+	app.delete('/url/tbl_matpel/:id',matpelcontrollers.delete)
+
+	//folder controller
+	app.get('/url/tbl_folder/:id',foldercontrollers.getid)
+	app.get('/url/tbl_folder',foldercontrollers.get)
+	app.post('/url/tbl_folder',foldercontrollers.post)
+	app.put('/url/tbl_folder/:id',foldercontrollers.put)
+	app.delete('/url/tbl_folder/:id',foldercontrollers.delete)
+
+	//user controler
+>>>>>>> 392a8c36413ff5e50d22f09e889ecf4b7254a83b
 	app.get('/url/tbl_user/:id',usercontrollers.getid)
 	app.get('/url/tbl_user',usercontrollers.get)
 	app.post('/url/tbl_user',usercontrollers.post)
