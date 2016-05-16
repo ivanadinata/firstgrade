@@ -48,6 +48,46 @@ var matpelcontrollers  = require('./controller/matpelcontroller')
 //>>>>>>> 7abccfce156f87399c9ff6ac00257972299c9814
 var foldercontrollers = require('./controller/foldercontroller')
 var usercontrollers = require('./controller/usercontroller')	
+var pkelasmatpelcontrollers = require('./controller/pkelasmatpelcontrol')
+var tlpcontrollers = require('./controller/tlpcontroller')
+var nilaicontrollers = require ('./controller/nilaicontroller')
+var pivotgurucontrollers = require ('./controller/pivotgurucontoller')
+var pivotmatpelusercontrollers = require ('./controller/pivotmatpelusercontroller')
+var statuscontrollers = require ('./controller/statuscontroller')
+
+
+
+	//tbl_status
+	app.get('/url/tbl_status',statuscontrollers.get)
+	app.get('/url/tbl_status/:id',statuscontrollers.getid)
+	app.post('/url/tbl_status',statuscontrollers.post)
+	app.put('/url/tbl_status/:id',statuscontrollers.put)
+	app.delete('/url/tbl_status/:id',statuscontrollers.delete)
+
+
+		//tbl_tlp
+	app.get('/url/tbl_tlp',tlpcontrollers.get)
+	app.get('/url/tbl_tlp/:id',tlpcontrollers.getid)
+	app.post('/url/tbl_tlp',tlpcontrollers.post)
+	app.put('/url/tbl_tlp/:id',tlpcontrollers.put)
+	app.delete('/url/tbl_tlp/:id',tlpcontrollers.delete)
+
+	//tbl_pivotmatpeluser
+	app.get('/url/tbl_pivotmatpeluser',pivotmatpelusercontrollers.get)
+	app.get('/url/tbl_pivotmatpeluser/:id',pivotmatpelusercontrollers.getid)
+	app.post('/url/tbl_pivotmatpeluser',pivotmatpelusercontrollers.post)
+	app.put('/url/tbl_pivotmatpeluser/:id',pivotmatpelusercontrollers.put)
+	app.delete('/url/tbl_pivotmatpeluser/:id',pivotmatpelusercontrollers.delete)
+
+
+	//tbl_pivotguru
+	app.get('/url/tbl_pivotguru',pivotgurucontrollers.get)
+	app.get('/url/tbl_pivotguru/:id',pivotgurucontrollers.getid)
+	app.post('/url/tbl_pivotguru',pivotgurucontrollers.post)
+	app.put('/url/tbl_pivotguru/:id',pivotgurucontrollers.put)
+	app.delete('/url/tbl_pivotguru/:id',pivotgurucontrollers.delete)
+
+
 	//tbl_user
 	app.get('/tbl_user',usercontroller.get)
 	app.post('/tbl_user',usercontroller.post)
@@ -156,6 +196,16 @@ var usercontrollers = require('./controller/usercontroller')
 	app.post('/url/tbl_user',usercontrollers.post)
 	app.put('/url/tbl_user/:id',usercontrollers.put)
 	app.delete('/url/tbl_user/:id',usercontrollers.delete)
+
+	//pivot kelas-matpel controler
+	app.get('/url/pivotkelasmatpel/:id',pkelasmatpelcontrollers.getid)
+	app.get('/url/pivotkelasmatpel',pkelasmatpelcontrollers.get)
+	app.post('/url/pivotkelasmatpel',pkelasmatpelcontrollers.post)
+	app.put('/url/pivotkelasmatpel/:id',pkelasmatpelcontrollers.put)
+	app.delete('/url/pivotkelasmatpel/:id',pkelasmatpelcontrollers.delete)
+
+
+
 
 http.listen(8080,function(){
 	console.log("Connected & Listen to port 8080");
