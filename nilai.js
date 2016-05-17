@@ -15,7 +15,7 @@ module.exports ={
 
 		connection.query("SELECT * from tbl_nilai",function(err, rows, fields){
 			if(rows.length != 0){
-				data["error"] = 0;
+				danonnnnnnta["error"] = 0;
 				data["dbnilai"] = rows;
 				res.json(data);
 				console.log(data)
