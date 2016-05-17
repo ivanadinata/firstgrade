@@ -41,12 +41,12 @@ var typecontrollers = require('./controller/typecontroller')
 var kelascontrollers = require('./controller/kelascontroller')
 //=======
 var kkmcontrollers  = require('./controller/kkmcontroller')
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
 
 var usercontrollers  = require('./controller/usercontroller')
 	
-=======
+//=======
 //<<<<<<< HEAD
 var matpelcontrollers  = require('./controller/matpelcontroller')
 //=======
@@ -54,15 +54,37 @@ var matpelcontrollers  = require('./controller/matpelcontroller')
 //>>>>>>> 7abccfce156f87399c9ff6ac00257972299c9814
 var foldercontrollers = require('./controller/foldercontroller')
 var usercontrollers = require('./controller/usercontroller')	
-<<<<<<< HEAD
-var pkelasmatpelcontrollers = require('./controller/pkelasmatpelcontrol')
+//<<<<<<< HEAD
+var pivotkelasmatpelcontrollers = require('./controller/pivotkelasmatpelcontroller')
 var tlpcontrollers = require('./controller/tlpcontroller')
 var nilaicontrollers = require ('./controller/nilaicontroller')
-var pivotgurucontrollers = require ('./controller/pivotgurucontoller')
+var pivotgurukelascontrollers = require ('./controller/pivotgurucontoller')
 var pivotmatpelusercontrollers = require ('./controller/pivotmatpelusercontroller')
 var statuscontrollers = require ('./controller/statuscontroller')
+var pivotmatpelkelascontrollers = require ('./controller/pivotkelasmatpelcontroller')
+var pivotusermatpelcontrollers = require ('./controller/pivotmatpelusercontroller')	
+var pivotkelasgurucontrollers = require ('./controller/pivotgurucontoller')
 
+//tbl_pivotkelasguru
+	app.get('/url/tbl_pivotkelasguru',pivotkelasgurucontrollers.get)
+	app.get('/url/tbl_pivotkelasguru/:id',pivotkelasgurucontrollers.getid)
+	app.post('/url/tbl_pivotkelasguru',pivotkelasgurucontrollers.post)
+	app.put('/url/tbl_pivotkelasguru/:id',pivotkelasgurucontrollers.put)
+	app.delete('/url/tbl_pivotkelasguru/:id',pivotkelasgurucontrollers.delete)
 
+	//tbl_pivotmatpeluser
+	app.get('/url/tbl_pivotusermatpel',pivotusermatpelcontrollers.get)
+	app.get('/url/tbl_pivotusermatpel/:id',pivotusermatpelcontrollers.getid)
+	app.post('/url/tbl_pivotusermatpel',pivotusermatpelcontrollers.post)
+	app.put('/url/tbl_pivotusermatpel/:id',pivotusermatpelcontrollers.put)
+	app.delete('/url/tbl_pivotusermatpel/:id',pivotusermatpelcontrollers.delete)
+
+	//pivot matpel-kelas controler
+	app.get('/url/tbl_pivotmatpelkelas/:id',pivotmatpelkelascontrollers.getid)
+	app.get('/url/tbl_pivotmatpelkelas',pivotmatpelkelascontrollers.get)
+	app.post('/url/tbl_pivotmatpelkelas',pivotmatpelkelascontrollers.post)
+	app.put('/url/tbl_pivotmatpelkelas/:id',pivotmatpelkelascontrollers.put)
+	app.delete('/url/tbl_pivotmatpelkelas/:id',pivotmatpelkelascontrollers.delete)
 
 	//tbl_status
 	app.get('/url/tbl_status',statuscontrollers.get)
@@ -88,16 +110,16 @@ var statuscontrollers = require ('./controller/statuscontroller')
 
 
 	//tbl_pivotguru
-	app.get('/url/tbl_pivotguru',pivotgurucontrollers.get)
-	app.get('/url/tbl_pivotguru/:id',pivotgurucontrollers.getid)
-	app.post('/url/tbl_pivotguru',pivotgurucontrollers.post)
-	app.put('/url/tbl_pivotguru/:id',pivotgurucontrollers.put)
-	app.delete('/url/tbl_pivotguru/:id',pivotgurucontrollers.delete)
+	app.get('/url/tbl_pivotguru',pivotgurukelascontrollers.get)
+	app.get('/url/tbl_pivotguru/:id',pivotgurukelascontrollers.getid)
+	app.post('/url/tbl_pivotguru',pivotgurukelascontrollers.post)
+	app.put('/url/tbl_pivotguru/:id',pivotgurukelascontrollers.put)
+	app.delete('/url/tbl_pivotguru/:id',pivotgurukelascontrollers.delete)
 
 
-=======
->>>>>>> 392a8c36413ff5e50d22f09e889ecf4b7254a83b
->>>>>>> 06e68ddb45e5c8b08bb068c38ecf77b6bb167472
+//=======
+//>>>>>>> 392a8c36413ff5e50d22f09e889ecf4b7254a83b
+//>>>>>>> 06e68ddb45e5c8b08bb068c38ecf77b6bb167472
 	//tbl_user
 	app.get('/tbl_user',usercontroller.get)
 	app.post('/tbl_user',usercontroller.post)
@@ -186,9 +208,9 @@ var statuscontrollers = require ('./controller/statuscontroller')
 	app.delete('/url/tbl_kkm/:id',kkmcontrollers.delete)
 //>>>>>>> 4e9a0d67d9ba79755572ca0dc13182ba651bf47b
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //user user
-=======
+//=======
 	//matpel controller
 	app.get('/url/tbl_matpel/:id',matpelcontrollers.getid)
 	app.get('/url/tbl_matpel',matpelcontrollers.get)
@@ -204,7 +226,7 @@ var statuscontrollers = require ('./controller/statuscontroller')
 	app.delete('/url/tbl_folder/:id',foldercontrollers.delete)
 
 	//user controler
->>>>>>> 392a8c36413ff5e50d22f09e889ecf4b7254a83b
+//>>>>>>> 392a8c36413ff5e50d22f09e889ecf4b7254a83b
 	app.get('/url/tbl_user/:id',usercontrollers.getid)
 	app.get('/url/tbl_user',usercontrollers.get)
 	app.post('/url/tbl_user',usercontrollers.post)
@@ -212,11 +234,11 @@ var statuscontrollers = require ('./controller/statuscontroller')
 	app.delete('/url/tbl_user/:id',usercontrollers.delete)
 
 	//pivot kelas-matpel controler
-	app.get('/url/pivotkelasmatpel/:id',pkelasmatpelcontrollers.getid)
-	app.get('/url/pivotkelasmatpel',pkelasmatpelcontrollers.get)
-	app.post('/url/pivotkelasmatpel',pkelasmatpelcontrollers.post)
-	app.put('/url/pivotkelasmatpel/:id',pkelasmatpelcontrollers.put)
-	app.delete('/url/pivotkelasmatpel/:id',pkelasmatpelcontrollers.delete)
+	app.get('/url/tbl_pivotkelasmatpel/:id',pivotkelasmatpelcontrollers.getid)
+	app.get('/url/tbl_pivotkelasmatpel',pivotkelasmatpelcontrollers.get)
+	app.post('/url/tbl_pivotkelasmatpel',pivotkelasmatpelcontrollers.post)
+	app.put('/url/tbl_pivotkelasmatpel/:id',pivotkelasmatpelcontrollers.put)
+	app.delete('/url/tbl_pivotkelasmatpel/:id',pivotkelasmatpelcontrollers.delete)
 
 
 
