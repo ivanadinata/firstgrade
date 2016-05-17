@@ -233,7 +233,7 @@ var pivotkelasgurucontrollers = require ('./controller/pivotgurucontoller')
 	app.put('/url/tbl_user/:id',usercontrollers.put)
 	app.delete('/url/tbl_user/:id',usercontrollers.delete)
 
-	//pivot kelas-matpel controler
+	//pivot kelas- matpel controler
 	app.get('/url/tbl_pivotkelasmatpel/:id',pivotkelasmatpelcontrollers.getid)
 	app.get('/url/tbl_pivotkelasmatpel',pivotkelasmatpelcontrollers.get)
 	app.post('/url/tbl_pivotkelasmatpel',pivotkelasmatpelcontrollers.post)
