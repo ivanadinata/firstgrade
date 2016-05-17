@@ -92,6 +92,7 @@ delete: function (id, callback){
 	})
 	.catch(function (err){
 		callback(err)
+		console.log(err)
 	}); 
 
 }

@@ -1,4 +1,4 @@
-var model = require('../model/user.js/');
+var model = require('../model/user.js');
 var data ={
 	"count" : 0,
 	"status" : "",
