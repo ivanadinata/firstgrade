@@ -10,8 +10,8 @@ var knex = require('knex')({
 });
 module.exports = {
 	get : function(callback){
-		var model = knex.select().table('tbl_pivotmatpeluser')
-		.select('tbl_pivotmatpeluser.id','id','id_matpel','id_user');
+		var model = knex.select().table('tbl_pivotguru')
+		.select('tbl_pivotguru.id','id','id_user','id_kelas');
 		console.log(model.toString())
 		model.then(function(rows){
 			callback(null,rows);
@@ -22,9 +22,9 @@ module.exports = {
 		});
 	},
 	getid: function(id, callback){
-		var model = knex.select().table('tbl_pivotmatpeluser')
-		.whereRaw('tbl_pivotmatpeluser.id = ?', [id])
-		.select(`tbl_pivotmatpeluser.id`,`id`,`id_matpel`,`id_user`);
+		var model = knex.select().table('tbl_pivotguru')
+		.whereRaw('tbl_pivotguru.id = ?', [id])
+		.select(`tbl_pivotguru.id`,`id`,`id_user`,`id_kelas`);
 		console.log(model.toString())
 		model.then(function (rows){
 			callback(null, rows);
@@ -38,16 +38,16 @@ module.exports = {
 	},
 	post:function(req,callback){
 		var id = req.body.id;
-		var id_matpel = req.body.id_matpel;
 		var id_user = req.body.id_user;
-		id_user = id_user.split (',')
+		id_user = id_user.split(',')
+		var id_kelas = req.body.id_kelas;
 		var insert = id_user.map(function (rows){
 		return {
-			'id_matpel' : id_matpel,
-			'id_user':rows
+			'id_user' : rows,
+			'id_kelas':id_kelas
 		} 
 		})
-		var model = knex('tbl_pivotmatpeluser')
+		var model = knex('tbl_pivotguru')
 		.insert(insert)
 		console.log(model.toString())
 		model.then(function (rows){
@@ -59,13 +59,13 @@ module.exports = {
 	},
 	put: function(req, callback){
 		var id = req.body.id;
-		var id_matpel = req.body.id_matpel;
 		var id_user = req.body.id_user;
-		var model = knex('tbl_pivotmatpeluser')
+		var id_kelas = req.body.id_kelas;
+		var model = knex('tbl_pivotguru')
 		.where('id',id)
 		.update({
-			'id_matpel':id_matpel,
-			'id_user': id_user
+			'id_user':id_user,
+			'id_kelas': id_kelas
 		})
 		.then(function (rows){
 			callback(null, rows);
@@ -76,7 +76,7 @@ module.exports = {
 
 	},
 	delete: function (id, callback){
-		var model = knex('tbl_pivotmatpeluser')
+		var model = knex('tbl_pivotguru')
 		.where('id' ,id)
 		.del()
 		.then(function (rows){

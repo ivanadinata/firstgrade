@@ -40,11 +40,11 @@ module.exports = {
 		var id = req.body.id;
 		var id_matpel = req.body.id_matpel;
 		var id_user = req.body.id_user;
-		id_user = id_user.split (',')
-		var insert = id_user.map(function (rows){
+		id_matpel = id_matpel.split (',')
+		var insert = id_matpel.map(function (rows){
 		return {
-			'id_matpel' : id_matpel,
-			'id_user':rows
+			'id_matpel' : rows,
+			'id_user':id_user
 		} 
 		})
 		var model = knex('tbl_pivotmatpeluser')

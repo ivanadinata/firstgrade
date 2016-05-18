@@ -40,12 +40,16 @@ module.exports = {
 		var id = req.body.id;
 		var id_kelas = req.body.id_kelas;
 		var id_matpel = req.body.id_matpel
-		var model = knex('tbl_pivotkelasmatpel')
-		.insert({
-			'id': id,
-			'id_kelas':id_kelas,
-			'id_matpel': id_matpel
+		id_matpel = id_matpel.split(',')
+		
+		var insert = id_matpel.map(function (rows){
+		return {
+			'id_kelas' : id_kelas,
+			'id_matpel':rows
+		} 
 		})
+		var model = knex('tbl_pivotkelasmatpel')
+		.insert(insert)
 		console.log(model.toString())
 		model.then(function (rows){
 			callback(null, rows);
@@ -54,6 +58,7 @@ module.exports = {
 			callback(err)
 		})
 	},
+	
 	put: function(req, callback){
 		var id = req.body.id;
 		var id_kelas = req.body.id_kelas;

@@ -49,7 +49,7 @@ module.exports ={
 			data["tbl_pivotguru"] = "Please provide all required data (i.e : id, id_user, id_kelas)";
 			res.json(data);
 		}
-	},
+	},                                                                                                          
 
 	put : function(req,res){
 		var id = req.body.id;

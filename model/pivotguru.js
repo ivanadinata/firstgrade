@@ -40,12 +40,15 @@ module.exports = {
 		var id = req.body.id;
 		var id_user = req.body.id_user;
 		var id_kelas = req.body.id_kelas;
-		var model = knex('tbl_pivotguru')
-		.insert({
-			'id': id,
-			'id_user':id_user,
-			'id_kelas': id_kelas
+		id_kelas = id_kelas.split(',')
+		var insert = id_kelas.map(function (rows){
+		return {
+			'id_user' : id_user,
+			'id_kelas':rows
+		} 
 		})
+		var model = knex('tbl_pivotguru')
+		.insert(insert)
 		console.log(model.toString())
 		model.then(function (rows){
 			callback(null, rows);
